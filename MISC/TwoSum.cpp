@@ -15,30 +15,32 @@
 //     Input: nums = [3,3], target = 6
 //     Output: [0,1]
 
-
 // This type of problem can be solved using hashmap
 
-//Solution
+// Solution
 
-class Solution {
+class Solution
+{
 public:
-    vector<int> twoSum(vector<int>& nums, int target) {
-         vector<int> res;
-    unordered_map<int, int> mp;
+    vector<int> twoSum(vector<int> &nums, int target)
+    {
+        vector<int> res;
+        unordered_map<int, int> mp;
 
-    for (int i = 0; i < nums.size(); ++i) {
+        for (int i = 0; i < nums.size(); ++i)
+        {
 
-   	 if (mp.find(target - nums[i]) != mp.end()) {
+            if (mp.find(target - nums[i]) != mp.end())
+            {
 
-   		 res.emplace_back(i);
-   		 res.emplace_back(mp[target - nums[i]]);
-   		 return res;
-   	 }
+                res.emplace_back(i);
+                res.emplace_back(mp[target - nums[i]]);
+                return res;
+            }
 
-   	 mp[nums[i]] = i;
-    }
+            mp[nums[i]] = i;
+        }
 
-    return res;
+        return res;
     }
 };
-
