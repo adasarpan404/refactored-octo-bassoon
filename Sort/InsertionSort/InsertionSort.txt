@@ -1,0 +1,15 @@
+Q1: What are the Boundary Cases of Insertion Sort algorithm?
+
+Ans: Insertion sort takes maximum time to sort if elements are sorted in reverse order. And it takes minimum time (Order of n) when elements are already sorted. 
+
+Q2: What are the Algorithmic Paradigm of Insertion Sort algorithm?
+
+Ans: Insertion Sort algorithm follows incremental approach.
+
+Q3: Is Insertion Sort an in-place sorting algorithm?
+
+Ans: Yes, insertion sort is an in-place sorting algorithm.
+
+Q4: Is Insertion Sort an stable sorting algorithm?
+
+Ans: Yes, insertion sort is a stable sorting algorithm.
