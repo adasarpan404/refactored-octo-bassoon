@@ -14,18 +14,18 @@ class node{
             data = value;
             next = NULL;
         }
-}
+};
 
 // second step would be inserting a element
     // substep 1  would be I am going to write how to insert a new node on the start of the node 
-void insert(node*& head, int val){
+void insertathead(node*& head, int val){
     node* n = new node(val);
     n -> next = head;
     head =n;
 }
     // substep 2 would be I am going to write how to insert after 
 
-    void insertafter(node* head, int val){
+    void insertafter(node* head,int key, int val){
         node* n = new node(val);
         if(key == head -> data){
             n-> next = head -> next;
@@ -64,11 +64,26 @@ void insert(node*& head, int val){
         cout<< temp -> data <<" -> ";
         temp = temp -> next;
     }
-    cout<<" NULL"<<endl
+    cout<<" NULL"<<endl;
  }
 
 // Fourth step would be writng the code the deletion of linkedlist
+void deleteathead(node*& head){
+    node* temp = head;
+    head = head -> next;
+    delete temp;
+}
 
+void deleteatend(node*& head){
+    node* p = head;
+    node* temp;
+    while(p-> next->next != NULL){
+        p = p->next;
+    }
+    temp = p-> next;
+    p-> next = NULL;
+    delete temp;
+}
 
 // Fifth step would be main function 
 int main(){
@@ -89,5 +104,9 @@ int main(){
     cout<<"After insertion at a given position:";
     print(head);
     cout<<endl;
+    deleteathead(head);
+    print(head);
+    deleteatend(head);
+    print(head);
     return 0;
 }
