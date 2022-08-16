@@ -72,8 +72,8 @@ int main()
 {
 	node* head = NULL;	 //declaring an empty linked list
 
-	insertathead(head, 1);
-	insertathead(head, 2);
+	// insertathead(head, 1);
+	// insertathead(head, 2);
 	cout << "After insertion at head: ";
 	print(head);
 	cout << endl;
