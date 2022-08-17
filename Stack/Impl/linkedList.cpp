@@ -60,6 +60,10 @@ int peek(stackNode*& head)
     return head->data;
 }
 
+
+
+
+
 int main(){
     stackNode* head = NULL;
     push(head, 1);
