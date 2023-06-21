@@ -11,7 +11,7 @@ int main(){
             break;
             case 1: mid++;
             break;
-            case 2: swap(a[mid++], a[high--]);
+            case 2: swap(a[mid], a[high--]);
             break;
         }
     }
