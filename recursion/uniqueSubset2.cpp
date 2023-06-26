@@ -2,12 +2,15 @@
 
 using namespace std;
 
-void printSolution(vector<vector<int>> result){
-    for(auto ele: result){
-        for(auto it: ele){
-            cout<<it<<" ";
+void printSolution(vector<vector<int>> result)
+{
+    for (auto ele : result)
+    {
+        for (auto it : ele)
+        {
+            cout << it << " ";
         }
-        cout<<endl;
+        cout << endl;
     }
 }
 class Solution
