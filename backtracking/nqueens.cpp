@@ -74,7 +74,7 @@ public:
 };
 int main()
 {
-    int n = 4; // we are taking 4*4 grid and 4 queens
+    int n = 4;
     Solution obj;
     vector<vector<string>> ans = obj.solveNQueens(n);
     for (int i = 0; i < ans.size(); i++)
