@@ -2,9 +2,6 @@
 
 using namespace std;
 
-
-
-
 struct Server
 {
     string name;
