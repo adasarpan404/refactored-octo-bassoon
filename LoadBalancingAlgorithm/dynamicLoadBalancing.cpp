@@ -47,8 +47,6 @@ public:
                 minIndex = i;
             }
         }
-
-       
         servers[minIndex].load += load;
 
         return servers[minIndex].name;
