@@ -1,3 +1,4 @@
+// This program is to practice the reversal of linkedlist
 #include <bits/stdc++.h>
 
 using namespace std;

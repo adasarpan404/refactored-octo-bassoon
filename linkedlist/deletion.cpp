@@ -1,3 +1,4 @@
+// This program is to practice the problem for deletion in linkedlist.
 #include <bits/stdc++.h>
 
 using namespace std;
