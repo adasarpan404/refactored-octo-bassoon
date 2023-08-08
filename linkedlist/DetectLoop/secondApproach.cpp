@@ -1,5 +1,5 @@
-// In this program, I am detecting loop in linkedlist
-// using fast and slow pointer.
+// In this program I am detecting loop in a linkedlist.
+// using unordered_set.
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -36,16 +36,16 @@ void print(Node *&head)
 
 bool detectLoop(Node *&head)
 {
-    Node *fastPtr = head;
-    Node *slowPtr = head;
-    while (slowPtr && fastPtr && fastPtr->next)
+    unordered_set<Node *> nodeSt;
+    Node *temp = head;
+    while (temp)
     {
-        slowPtr = slowPtr->next;
-        fastPtr = fastPtr->next->next;
-        if (slowPtr == fastPtr)
+        if (nodeSt.find(temp) != nodeSt.end())
         {
             return true;
         }
+        nodeSt.insert(temp);
+        temp = temp->next;
     }
     return false;
 }
