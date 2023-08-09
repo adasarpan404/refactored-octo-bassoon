@@ -1,4 +1,3 @@
-// This program is for removing duplicates in a sorted linkedlist using iterative approach
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -24,7 +23,7 @@ void insertAtHead(Node *&head, int value)
 
 void print(Node *&head)
 {
-    Node *temp = head;
+    Node *&temp = head;
     while (temp)
     {
         cout << temp->data << " ->";
@@ -35,30 +34,31 @@ void print(Node *&head)
 
 void removeDuplicates(Node *&head)
 {
-    Node *current = head;
-    Node *next_next;
-    if (current == NULL)
-        return;
-
-    while (current->next != NULL)
+    Node *ptr1, *ptr2, *dup;
+    ptr1 = head;
+    while (ptr1 != NULL && ptr1->next != NULL)
     {
-        if (current->data == current->next->data)
+        ptr2 = ptr1;
+        while (ptr2->next != NULL)
         {
-            next_next = current->next->next;
-            free(current->next);
-            current->next = next_next;
+            if (ptr1->data == ptr2->next->data)
+            {
+                dup = ptr2->next;
+                ptr2->next = ptr2->next->next;
+                free(dup);
+            }
+            else
+            {
+                ptr2 = ptr2->next;
+            }
         }
-        else
-        {
-            current = current->next;
-        }
+        ptr1 = ptr1->next;
     }
 }
-
 int main()
 {
     Node *head = NULL;
-    int values[] = {5, 5, 4, 4, 3, 3, 2, 2, 1, 1};
+    int values[] = {5, 4, 4, 5, 3, 6, 2, 9, 1, 2};
     int numValues = sizeof(values) / sizeof(values[0]);
 
     for (int i = 0; i < numValues; i++)
@@ -70,4 +70,5 @@ int main()
     removeDuplicates(head);
     cout << "Final LinkedList" << endl;
     print(head);
+    return 0;
 }

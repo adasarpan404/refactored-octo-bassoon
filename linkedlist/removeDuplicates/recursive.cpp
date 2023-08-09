@@ -1,4 +1,4 @@
-// This program is for removing duplicates in a sorted linkedlist using iterative approach
+// This program is for removing duplicates in a sorted linkedlist using recursive approach
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -35,23 +35,20 @@ void print(Node *&head)
 
 void removeDuplicates(Node *&head)
 {
-    Node *current = head;
-    Node *next_next;
-    if (current == NULL)
-        return;
-
-    while (current->next != NULL)
+    if (head == NULL || head->next == NULL)
     {
-        if (current->data == current->next->data)
-        {
-            next_next = current->next->next;
-            free(current->next);
-            current->next = next_next;
-        }
-        else
-        {
-            current = current->next;
-        }
+        return;
+    }
+    if (head->data == head->next->data)
+    {
+        Node *nextNext = head->next->next;
+        delete head->next;
+        head->next = nextNext;
+        removeDuplicates(head); // Check the current node again
+    }
+    else
+    {
+        removeDuplicates(head->next); // Move to the next node
     }
 }
 
