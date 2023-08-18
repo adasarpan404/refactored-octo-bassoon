@@ -23,7 +23,8 @@ int main()
     int a[] = {10, 20, 30, 40, 50, 60};
     int size = sizeof a / sizeof a[0];
     int pos = binarySearch(a, 40, size);
-    cout << (pos != -1 ? "Element is found on position " + to_string(pos + 1) : "Not able to found element") << endl;
-
+    cout << (pos != -1 ? "Element found at position " + to_string(pos + 1) : "Element not found") << endl;
+    pos = binarySearch(a, 45, size);
+    cout << (pos != -1 ? "Element found at position " + to_string(pos + 1) : "Element not found") << endl;
     return 0;
 }

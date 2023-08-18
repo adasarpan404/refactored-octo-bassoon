@@ -2,16 +2,20 @@
 #include <queue>
 #include <iostream>
 
-class EventLoop {
+class EventLoop
+{
 public:
     typedef std::function<void()> EventCallback;
 
-    void addEvent(EventCallback event) {
+    void addEvent(EventCallback event)
+    {
         eventQueue.push(event);
     }
 
-    void run() {
-        while (!eventQueue.empty()) {
+    void run()
+    {
+        while (!eventQueue.empty())
+        {
             EventCallback event = eventQueue.front();
             eventQueue.pop();
             event();
@@ -24,15 +28,18 @@ private:
 
 // Example usage
 
-int main() {
+int main()
+{
     EventLoop eventLoop;
 
     // Define some events
-    EventLoop::EventCallback event1 = []() {
+    EventLoop::EventCallback event1 = []()
+    {
         std::cout << "Event 1" << std::endl;
     };
 
-    EventLoop::EventCallback event2 = []() {
+    EventLoop::EventCallback event2 = []()
+    {
         std::cout << "Event 2" << std::endl;
     };
 

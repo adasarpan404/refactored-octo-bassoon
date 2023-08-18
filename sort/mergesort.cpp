@@ -44,6 +44,7 @@ void mergeSort(vector<int> &arr, int low, int high)
     mergeSort(arr, mid + 1, high);
     merge(arr, low, mid, high);
 }
+
 int main()
 {
     vector<int> arr{9, 8, 7, 6, 5, 4, 3, 2, 1, 0, 90, 80, 70, 60};
