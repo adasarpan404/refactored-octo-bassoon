@@ -37,6 +37,5 @@ int main()
     Solution solution;
     cout << (solution.searchInMatrix(matrix, 10) ? "Element found" : "Element not found") << endl;
     cout << (solution.searchInMatrix(matrix, 14) ? "Element found" : "Element not found") << endl;
-
     return 0;
 }
