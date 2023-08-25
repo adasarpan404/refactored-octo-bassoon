@@ -3,60 +3,57 @@
 
 using namespace std;
 
-// Function to count the number of elements smaller than or equal to 'target' in the matrix
-int countLessOrEqual(const vector<vector<int>> &matrix, int target)
+class Solution
 {
-    int n = matrix.size();
-    int count = 0;
-    int row = n - 1;
-    int col = 0;
-
-    while (row >= 0 && col < n)
+private:
+    int countLessOrEqual(vector<vector<int>> &matrix, int target)
     {
-        if (matrix[row][col] <= target)
+        int n = matrix.size(), count = 0, row = n - 1, col = 0;
+        while (row >= 0 && col < n)
         {
-            count += row + 1; // All elements above this row are also smaller
-            col++;
+            if (matrix[row][col] <= target)
+            {
+                count += row + 1;
+                col++;
+            }
+            else
+            {
+                row--;
+            }
         }
-        else
-        {
-            row--;
-        }
+        return count;
     }
 
-    return count;
-}
-
-int kthSmallest(vector<vector<int>> &matrix, int k)
-{
-    int n = matrix.size();
-    int low = matrix[0][0];
-    int high = matrix[n - 1][n - 1];
-
-    while (low < high)
+public:
+    int kthSmallest(vector<vector<int>> matrix, int k)
     {
-        int mid = low + (high - low) / 2;
-        int count = countLessOrEqual(matrix, mid);
-
-        if (count < k)
+        int n = matrix.size();
+        int low = matrix[0][0];
+        int high = matrix[n - 1][n - 1];
+        while (low < high)
         {
-            low = mid + 1;
+            int mid = low + (high - low) / 2;
+            int count = countLessOrEqual(matrix, mid);
+            if (count < k)
+            {
+                low = mid + 1;
+            }
+            else
+            {
+                high = mid;
+            }
         }
-        else
-        {
-            high = mid;
-        }
+        return low;
     }
-
-    return low;
-}
+};
 
 int main()
 {
+    Solution solution;
     vector<vector<int>> matrix = {{1, 5, 9}, {10, 11, 13}, {12, 13, 15}};
     int k = 8;
 
-    int result = kthSmallest(matrix, k);
+    int result = solution.kthSmallest(matrix, k);
 
     cout << "Kth smallest element: " << result << endl;
 
