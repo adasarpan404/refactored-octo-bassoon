@@ -11,10 +11,10 @@ public:
 
         if (target > nums[high - 1])
             return high;
-        while (low >= high)
+        while (low <= high)
         {
             int mid = low + (high - low) / 2;
-
+            cout << mid << " " << low << " " << high << " " << endl;
             if (nums[mid] == target)
                 return mid;
             if (target < nums[mid])
@@ -28,12 +28,8 @@ public:
 
 int main()
 {
-    vector<int> nums{1, 2, 4, 6, 10, 11, 13, 16};
+    vector<int> nums{11, 13, 15, 16, 17, 19};
     Solution solution;
-    cout << solution.searchInsert(nums, 3) << endl;
-    cout << solution.searchInsert(nums, 8) << endl;
-    cout << solution.searchInsert(nums, 13) << endl;
-    cout << solution.searchInsert(nums, 19) << endl;
-    cout << solution.searchInsert(nums, 4) << endl;
+    cout << solution.searchInsert(nums, 14);
     return 0;
 }
