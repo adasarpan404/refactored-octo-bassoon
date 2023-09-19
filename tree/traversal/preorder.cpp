@@ -17,22 +17,6 @@ public:
 
 vector<int> preOrderTraversal(Node *&root)
 {
-    vector<int> preOrder;
-    if (root == NULL)
-        return preOrder;
-    stack<Node *> s;
-    s.push(root);
-    while (!s.empty())
-    {
-        Node *topNode = s.top();
-        preOrder.push_back(topNode->data);
-        s.pop();
-        if (topNode->right != NULL)
-            s.push(topNode->right);
-        if (topNode->left != NULL)
-            s.push(topNode->left);
-    }
-    return preOrder;
 }
 
 int main()

@@ -17,26 +17,6 @@ public:
 
 vector<int> inOrderTraversal(Node *root)
 {
-    vector<int> inorder;
-    stack<Node *> s;
-    while (true)
-    {
-        if (root != NULL)
-        {
-            s.push(root);
-            root = root->left;
-        }
-        else
-        {
-            if (s.empty())
-                break;
-            root = s.top();
-            inorder.push_back(root->data);
-            s.pop();
-            root = root->right;
-        }
-    }
-    return inorder;
 }
 
 int main()
