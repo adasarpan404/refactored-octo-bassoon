@@ -25,7 +25,7 @@ vector<int> postOrderTraversal(Node *root)
         if (curr)
         {
             st.push(curr);
-            curr = curr->right;
+            curr = curr->left;
         }
         else
         {
