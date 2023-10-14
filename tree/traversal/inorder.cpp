@@ -18,28 +18,25 @@ public:
 vector<int> inOrderTraversal(Node *root)
 {
     stack<Node *> st;
-    vector<int> inOrder;
-    if (root == NULL)
-        return inOrder;
-    Node *node = root;
+    vector<int> inorder;
     while (true)
     {
-        if (node != NULL)
+        if (root != NULL)
         {
-            st.push(node);
-            node = node->left;
+            st.push(root);
+            root = root->left;
         }
         else
         {
             if (st.empty())
                 break;
-            node = st.top();
+            root = st.top();
+            inorder.push_back(root->data);
             st.pop();
-            inOrder.push_back(node->data);
-            node = node->right;
+            root = root->right;
         }
     }
-    return inOrder;
+    return inorder;
 }
 
 int main()
