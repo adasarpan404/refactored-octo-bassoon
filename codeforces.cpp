@@ -6,9 +6,13 @@ typedef long long ll;
 
 typedef vector<ll> vll;
 
+string nl = "\n";
+
 void solve()
 {
-
+    int r, c;
+    cin >> r >> c;
+    int mp[r][c];
 }
 int main()
 {
@@ -16,7 +20,7 @@ int main()
     cin.tie(0);
     cout.tie(0);
     int testcases;
-    bool multi = true;
+    bool multi = false;
     if (multi)
     {
         cin >> testcases;
