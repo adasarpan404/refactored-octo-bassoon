@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-
+#include <unistd.h>
 using namespace std;
 
 typedef long long ll;
@@ -10,9 +10,23 @@ string nl = "\n";
 
 void solve()
 {
-    int r, c;
-    cin >> r >> c;
-    int mp[r][c];
+    int n;
+    cin >> n;
+    int h[n], a[n];
+    for (int i = 0; i < n; i++)
+    {
+        cin >> h[i] >> a[i];
+    }
+    int ans = 0;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (h[i] == a[j])
+                ans++;
+        }
+    }
+    cout << ans << endl;
 }
 int main()
 {
